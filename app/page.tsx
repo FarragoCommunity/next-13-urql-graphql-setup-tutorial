@@ -1,27 +1,27 @@
-import {
-  AllFilmsDocument,
-  AllFilmsQuery,
-  AllFilmsQueryVariables,
-} from "@/graphql/operations";
-import { getUrqlClient } from "@/lib/urql";
+// 'use client'
+import React from 'react'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
-async function getAllFilms() {
-  const { client } = getUrqlClient();
-  const result = await client.query<AllFilmsQuery, AllFilmsQueryVariables>(
-    AllFilmsDocument,
-    {}
-  );
-  return result;
-}
-
-export default async function Home() {
-  const { data, error } = await getAllFilms();
-
-  data?.allFilms;
+function Home() {
+  // const router = useRouter()
   return (
-    <div>
-      {error && <p>{error.message}</p>}
-      {data && <pre>{JSON.stringify(data, null, 4)}</pre>}
+    <div>Home
+
+      <Link href={'/data'} >
+      
+
+      <h1 className='text-orange-700'>Data</h1>
+      </Link>
+
+      <Link href={'/form'} >
+      
+
+      <h1 className='text-orange-700'>FORM</h1>
+      </Link>
     </div>
-  );
+
+  )
 }
+
+export default Home

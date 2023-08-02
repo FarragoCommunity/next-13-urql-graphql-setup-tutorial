@@ -1,0 +1,5 @@
+mutation CreateTodo( $description: String!, $done: Boolean! , $id : String!) {
+  updateTodo(input: {description: $description, done: $done, id : $id }) {
+    id
+  }
+}

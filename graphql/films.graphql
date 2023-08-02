@@ -1,9 +1,8 @@
 query AllFilms {
-  allFilms {
-    films {
-      id
-      releaseDate
-      title
-    }
-  }
+ users{
+  id
+  name
+ }
+
+
 }
